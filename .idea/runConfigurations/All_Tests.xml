@@ -1,0 +1,40 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="All Tests" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+    <module name="algorithms" />
+    <extension name="coverage" sample_coverage="false">
+      <pattern>
+        <option name="PATTERN" value="com.alexianus.coursera.algorithms.sorts.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+      <pattern>
+        <option name="PATTERN" value="com.alexianus.coursera.algorithms.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+      <pattern>
+        <option name="PATTERN" value="com.alexianus.coursera.algorithms.dnc.week1.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <setting name="path" value="" />
+    <setting name="vmparams" value="" />
+    <setting name="params" value="" />
+    <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+    <setting name="searchForTest" value="In whole project" />
+    <setting name="showProgressMessages" value="true" />
+    <setting name="useSbt" value="false" />
+    <setting name="useUiWithSbt" value="false" />
+    <setting name="jrePath" value="" />
+    <envs />
+    <setting name="testKind" value="All in package" />
+    <setting name="package" value="" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week1.KaratsubaSpec" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week1.KaratsubaSpec" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week2.UnimodalSpec" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week2.UnimodalSpec" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.sorts.MergeSortSpec" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.sorts.MergeSortSpec" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

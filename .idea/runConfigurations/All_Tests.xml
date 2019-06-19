@@ -29,6 +29,8 @@
     <setting name="package" value="" />
     <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week1.KaratsubaSpec" />
     <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week1.KaratsubaSpec" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week2.InversionsSpec" />
+    <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week2.InversionsSpec" />
     <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week2.UnimodalSpec" />
     <buffered bufClass="com.alexianus.coursera.algorithms.dnc.week2.UnimodalSpec" />
     <buffered bufClass="com.alexianus.coursera.algorithms.sorts.MergeSortSpec" />

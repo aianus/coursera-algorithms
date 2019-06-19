@@ -1,5 +1,7 @@
 package com.alexianus.coursera.algorithms.dnc
 
+import scala.collection.mutable.ListBuffer
+
 package object week2 {
 
   // Unimodal Max
@@ -39,6 +41,51 @@ package object week2 {
         unimodalMax(middleThree)
       }
     }
+  }
+
+  def countInversionsMergeStep[A](input1: IndexedSeq[A], input2: IndexedSeq[A])(implicit ordering: Ordering[A]): Tuple2[Long, IndexedSeq[A]] = {
+    var inversions = 0
+    val sorted = new ListBuffer[A]
+
+    var i = 0
+    var j = 0
+
+    while (i < input1.size || j < input2.size) {
+      if (i == input1.size) {
+        sorted.append(input2(j))
+        j += 1
+      } else if (j == input2.size) {
+        sorted.append(input1(i))
+        i += 1
+      } else if (ordering.lteq(input1(i), input2(j))) {
+        sorted.append(input1(i))
+        i += 1
+      } else {
+        sorted.append(input2(j))
+        j += 1
+        inversions += (input1.size - i)
+      }
+    }
+
+    (inversions, sorted.toIndexedSeq)
+  }
+
+  def countInversions[A](input: IndexedSeq[A])(implicit ordering: Ordering[A]): Long = {
+
+    def countInversionsInternal[A](input: IndexedSeq[A])(implicit ordering: Ordering[A]): Tuple2[Long, IndexedSeq[A]] = input.length match {
+      case 0 => (0, IndexedSeq.empty[A])
+      case 1 => (0, input)
+      case _ => {
+        val (left, right) = input.splitAt(input.length / 2)
+        val leftResult = countInversionsInternal(left)
+        val rightResult = countInversionsInternal(right)
+        val mergeStepResult = countInversionsMergeStep(leftResult._2, rightResult._2)
+
+        (leftResult._1 + rightResult._1 + mergeStepResult._1, mergeStepResult._2)
+      }
+    }
+
+    countInversionsInternal(input)._1
   }
 
 }
